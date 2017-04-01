@@ -60,7 +60,7 @@
                     <li id="seller-switch-btn" role="presentation"><a href="#seller-table" data-toggle="tab">Sellers</a></li>
                     <li role="presentation" class="pull-right">
                         <!-- <div class='btn-toolbar pull-right'> -->
-                            <button id="plus-btn" type="button" class="btn btn-default">
+                            <button id="plus-btn" type="button" class="btn btn-default" data-toggle="modal" data-target="#postProvider">
                                 <span class="fa fa-plus" aria-hidden="true"></span>
                             </button>
                         <!-- </div> -->
@@ -135,48 +135,133 @@
       </div>
         </div>
       </div>
-<!-- Footer -->
-      <div class="container-fluid text-center">
-      </div>
-<!-- Modal for create buyer-->
-      <button type="button" class="btn btn-info option" data-toggle="modal" data-target="#postBuyer" id="option">Options</button>
-      <div class="modal fade" id="postBuyer" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-body">
-                <h3>I am buyer</h3>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-primary save" data-dismiss="modal">Save</button>
-            <button type="button" class="btn btn-default closes">Reset</button>
-            </div>
-          </div>
+  <!-- Footer -->
+        <div class="container-fluid text-center">
         </div>
-      </div>
-<!-- Modal for create seller-->
-      <button type="button" class="btn btn-info option" data-toggle="modal" data-target="#postSeller" id="option">Options</button>
-      <div class="modal fade" id="postSeller" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-body">
-                <h3>I am seller</h3>
+  <!-- Modal for create seller-->
+        <!-- <button type="button" class="btn btn-info option" data-toggle="modal" data-target="#postProvider">Provider</button> -->
+        <div class="modal fade" id="postProvider" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Provide swipe(s)
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                </h5>
+              </div>
+
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div class="col">
+                  <div class="col col-xs-2">
+                    <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Name" id="provider-name">
+                    </div>
+                  </div>
+                  </div>
+
+                  <div class="col col-xs-2">
+                      <select value="Default" class="form-control" id="provider-dining-hall">
+                      <option selected disabled hidden>Available Location</option>
+                      <option value="A">De Neve</option>
+                      <option value="B">Covel</option>
+                      <option value="C">Bruin Plate</option>
+                      <option value="D">FEAST at Rieber</option>
+                      </select>
+                  </div>
+
+                  <div class="col col-xs-2 col-xs-offset-1">
+                    <select value="Default" class="form-control" id="provider-time">
+                    <option selected disabled hidden>Available Time</option>
+                    <option value="A">11 a.m. - 12 p.m.</option>
+                    <option value="B">12 p.m. - 1 p.m.</option>
+                    <option value="C">1 p.m. - 2 p.m.</option>
+                    <option value="D">2 p.m. - 3 p.m.</option>
+                    <option value="E">5 p.m. - 6 p.m.</option>
+                    <option value="F">6 p.m. - 7 p.m.</option>
+                    <option value="G">7 p.m. - 8 p.m.</option>
+                    <option value="H">8 p.m. - 9 p.m.</option>
+                    </select>
+                  </div>
+
+                <div class="col col-xs-2 col-xs-offset-1">
                 <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                  <input type="email" class="form-control" placeholder="Contact Email" id="provider-contact-info">
                 </div>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-primary save" data-dismiss="modal">Save</button>
-            <button type="button" class="btn btn-default closes">Reset</button>
+                </div>
+              </div>
+              </div>
+              <div class="modal-footer">
+              <button type="button" id="post-provider-btn" class="btn btn-primary save" data-dismiss="modal">Post</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-  </div>
-<!-- scripts -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
-</html>
+
+  <!-- Modal for create buyer-->
+        <button type="button" class="btn btn-info option" data-toggle="modal" data-target="#postDemander" id="option">Demander</button>
+        <div class="modal fade" id="postDemander" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">I am a Swipe Demander
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                </h5>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div class="col">
+                  <div class="col col-xs-2">
+                    <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Name" id="Name">
+                    </div>
+                  </div>
+                  </div>
+
+                  <div class="col col-xs-2">
+                      <select value="Default" class="form-control" id="Where">
+                      <option selected disabled hidden>Where to Eat</option>
+                      <option value="A">De Neve</option>
+                      <option value="B">Covel</option>
+                      <option value="C">Bruin Plate</option>
+                      <option value="D">FEAST at Rieber</option>
+                      </select>
+                  </div>
+
+                  <div class="col col-xs-2 col-xs-offset-1">
+                    <select class="form-control" id="Time">
+                    <option value="Default" selected disabled hidden>When to Eat</option>
+                    <option value="A">11a.m. - 12p.m.</option>
+                    <option value="B">12p.m. - 1p.m.</option>
+                    <option value="C">1p.m. - 2p.m.</option>
+                    <option value="D">2p.m. - 3p.m.</option>
+                    <option value="E">5p.m. - 6p.m.</option>
+                    <option value="F">6p.m. - 7p.m.</option>
+                    <option value="G">7p.m. - 8p.m.</option>
+                    <option value="H">8p.m. - 9p.m.</option>
+                    </select>
+                  </div>
+
+                <div class="col col-xs-2 col-xs-offset-1">
+                <div class="input-group">
+                  <input type="email" class="form-control" placeholder="Contact Email" id="Contact">
+                </div>
+                </div>
+              </div>
+              </div>
+              <div class="modal-footer">
+              <button type="button" class="btn btn-primary save" data-dismiss="modal">Post</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  <!-- scripts -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/jquery.easing.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/script.js"></script>
+    </body>
+  </html>
