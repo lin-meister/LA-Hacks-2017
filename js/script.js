@@ -18,5 +18,11 @@ $(document).ready(function() {
         console.log(newProviderTime);
         console.log(newProviderContactInfo);
 
-    })
+        var newProviderJson = {
+            'name': newProviderName,
+            'diningHall': newProviderDiningHall,
+            'time': newProviderDiningTime,
+            'contact': newProviderContactInfo,
+        };
+    });
 });
