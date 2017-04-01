@@ -58,6 +58,13 @@
                 <ul class="nav nav-tabs">
                     <li id="buyer-switch-btn" role="presentation" class="active"><a href="#buyer-table" data-toggle="tab" class="dataTab">Buyers</a></li>
                     <li id="seller-switch-btn" role="presentation"><a href="#seller-table" data-toggle="tab">Sellers</a></li>
+                    <li role="presentation" class="pull-right">
+                        <!-- <div class='btn-toolbar pull-right'> -->
+                            <button id="plus-btn" type="button" class="btn btn-default">
+                                <span class="fa fa-plus" aria-hidden="true"></span>
+                            </button>
+                        <!-- </div> -->
+                    </li>
                 </ul>
             </div>
           </div>
@@ -102,6 +109,8 @@
                   <th>Name</th>
                   <th>Swipe Amount</th>
                   <th>Email</th>
+                  <th>Available times</th>
+                  <th>Available dining halls</th>
                 </tr>
               </thead>
               <tbody>
@@ -110,12 +119,16 @@
                   <td>Mark</td>
                   <td>Otto</td>
                   <td>@mdo</td>
+                  <td>8:00AM-1:30PM</td>
+                  <td>De Neve, Rieber</td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
                   <td>Jacob</td>
                   <td>Thornton</td>
                   <td>@fat</td>
+                  <td>6:00PM-9:00PM</td>
+                  <td>Hedrick</td>
                 </tr>
               </tbody>
         </table>
@@ -141,12 +154,16 @@
         </div>
       </div>
 <!-- Modal for create seller-->
-      <button type="button" class="btn btn-info option" data-toggle="modal" data-target="#postBuyer" id="option">Options</button>
-      <div class="modal fade" id="postBuyer" role="dialog">
+      <button type="button" class="btn btn-info option" data-toggle="modal" data-target="#postSeller" id="option">Options</button>
+      <div class="modal fade" id="postSeller" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-body">
                 <h3>I am seller</h3>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                </div>
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-primary save" data-dismiss="modal">Save</button>
@@ -155,9 +172,11 @@
           </div>
         </div>
       </div>
+  </div>
 <!-- scripts -->
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
