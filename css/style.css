@@ -24,6 +24,59 @@
     padding-right: 5px;
 }
 
+.modal-dialog{
+    width: 750px;
+    margin:0 auto;
+    display:table;
+    position: absolute;
+    left: 0;
+    right:0;
+    top: 20%; 
+}
+
+.modal-body{
+    height: 100px;
+    padding-top: 30px;
+}
+
+#Name {
+	border-radius: 0px;
+	height: 40px;
+    font-size: 15px;
+    width: 100px;
+    padding-right: 0px;
+}
+
+#Where {
+	border-radius: 0px;
+	height: 40px;
+    font-size: 15px;
+    width: 150px;
+    padding: 0px;
+}
+
+#Time {
+	border-radius: 0px;
+	height: 40px;
+    font-size: 15px;
+    width: 150px;
+    padding: 0px;
+}
+
+#Contact {
+	border-radius: 0px;
+	height: 40px;
+    font-size: 15px;
+    width: 200px;
+    padding-right: 0px;
+}
+
+.post {
+    background-color: #fd5c63;
+    color: #ffffff;
+    border-radius: 0px;
+    border: 0;
+}
 .searchBox {
     padding-left: 20px;
 }
