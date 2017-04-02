@@ -2,6 +2,12 @@ html {
     font-family: 'Lato', sans-serif;
 }
 
+body {
+    background-image: url(../imageedit_7_3013960834.png);
+    background-position: absolute bottom;
+    background-repeat: no-repeat;
+}
+
 .logo {
     font-size: 40px;
     color: #fd5c63;
@@ -60,7 +66,6 @@ html {
 	height: 40px;
     font-size: 15px;
     width: 150px;
-    padding: 0px;
     padding-left: 10px;
 }
 
@@ -69,7 +74,6 @@ html {
 	height: 40px;
     font-size: 15px;
     width: 150px;
-    padding: 0px;
     padding-left: 10px;
 }
 
@@ -83,6 +87,14 @@ html {
 
 .post {
     background-color: #fd5c63;
+    color: #ffffff;
+    border-radius: 0px;
+    border: 0;
+    font-size: 18px;
+}
+
+.post:hover {
+    background-color: #fe8187;
     color: #ffffff;
     border-radius: 0px;
     border: 0;
@@ -112,23 +124,26 @@ html {
     font-size: 18px;
 }
 
-#plus-btn {
-    color: #fd5c63;
-    border: 0px solid black;
-    padding: 10px 15px;
-}
-
-#plus-btn:hover {
-    background-color: inherit;
-    color: #fe8187;
-}
-
-#plus-btn:focus {
-    background-color: inherit;
-}
 .table {
     border: 1px solid #ddd;
     font-size: 18px;
+    background: #ffffff;
+}
+
+.col1{
+    background-color: #F5F5F5;
+}
+
+.col2{
+    background-color: #F5F5F5;
+}
+
+.col3{
+    background-color: #F5F5F5;
+}
+
+.col4{
+    background-color: #F5F5F5;
 }
 
 .btnDismissal {
@@ -142,7 +157,6 @@ html {
 .btnDismissal:hover {
     background-color: #fe8187;
     color:  #ffffff;
-    width: 100px;
     font-size: 18px;
 }
 
