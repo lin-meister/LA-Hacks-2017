@@ -1,3 +1,7 @@
+html {
+    font-family: 'Lato', sans-serif;
+}
+
 .logo {
     font-size: 40px;
     color: #fd5c63;
@@ -31,12 +35,16 @@
     position: absolute;
     left: 0;
     right:0;
-    top: 20%; 
+    top: 20%;
 }
 
 .modal-body{
     height: 100px;
     padding-top: 30px;
+}
+
+.modal-title{
+    font-size: 18px;
 }
 
 #Name {
@@ -53,6 +61,7 @@
     font-size: 15px;
     width: 150px;
     padding: 0px;
+    padding-left: 10px;
 }
 
 #Time {
@@ -61,6 +70,7 @@
     font-size: 15px;
     width: 150px;
     padding: 0px;
+    padding-left: 10px;
 }
 
 #Contact {
@@ -76,7 +86,9 @@
     color: #ffffff;
     border-radius: 0px;
     border: 0;
+    font-size: 18px;
 }
+
 .searchBox {
     padding-left: 20px;
 }
@@ -116,4 +128,49 @@
 }
 .table {
     border: 1px solid #ddd;
+    font-size: 18px;
+}
+
+.btnDismissal {
+     background-color: #fd5c63;
+    color: #ffffff;
+    border-radius: 0px;
+    border: 0;
+    font-size: 18px;
+}
+
+.btnDismissal:hover {
+    background-color: #fe8187;
+    color:  #ffffff;
+    width: 100px;
+    font-size: 18px;
+}
+
+.tooltip {
+  font-size: 15px;
+}
+
+.dataTab {
+    font-size: 15px;
+    color: #000000;
+}
+
+.dataTab:hover {
+    font-size: 15px;
+    color: #fe8187;
+}
+
+#plus-btn {
+    color: #fd5c63;
+    border: 0px solid black;
+    padding: 10px 15px;
+}
+
+#plus-btn:hover {
+    background-color: inherit;
+    color: #fe8187;
+}
+
+#plus-btn:focus {
+    background-color: inherit;
 }

@@ -1,28 +1,80 @@
 $(document).ready(function() {
+    var diningHallMapper = function(letter) {
+        switch (letter) {
+            case 'A':
+                return 'De Neve';
+            case 'B':
+                return 'Covel';
+            case 'C':
+                return 'Bruin Plate';
+            case 'D':
+                return 'Feast at Rieber';
+        }
+        return '';
+    }
+
+    var timeMapper = function(letter) {
+        var start = new Date(), end = new Date();
+        switch (letter) {
+            case 'A':
+                start.setHours(11);
+                end.setHours(12);
+            case 'B':
+                start.setHours(12);
+                end.setHours(13);
+            case 'C':
+                start.setHours(13);
+                end.setHours(14);
+            case 'D':
+                start.setHours(14);
+                end.setHours(15);
+            case 'E':
+                start.setHours(17);
+                end.setHours(18);
+            case 'F':
+                start.setHours(18);
+                end.setHours(19);
+            case 'G':
+                start.setHours(19);
+                end.setHours(20);
+            case 'H':
+                start.setHours(20);
+                end.setHours(21);
+        }
+        return {start, end};
+    }
     $('#seller-switch-btn').on('click', function() {
         $('#plus-btn').attr('data-target', '#postProvider');
-        console.log($('#plus-btn'));
     })
 
     $('#buyer-switch-btn').on('click', function() {
         $('#plus-btn').attr('data-target', '#postDemander');
     })
 
-    $('#postProvider').on('click', '.modal-footer button', function() {
+    $('#postProvider').on('click', '.modal-footer button', function(event) {
         var newProviderName = $('#provider-name')[0].value;
-        var newProviderDiningHall = $('#provider-dining-hall')[0].value;
-        var newProviderTime = $('#provider-time')[0].value;
+        var newProviderDiningHall = diningHallMapper($('#provider-dining-hall')[0].value);
+        var newProviderTime = timeMapper($('#provider-time')[0].value);
         var newProviderContactInfo = $('#provider-contact-info')[0].value;
-        console.log(newProviderName);
-        console.log(newProviderDiningHall);
-        console.log(newProviderTime);
-        console.log(newProviderContactInfo);
 
         var newProviderJson = {
             'name': newProviderName,
             'diningHall': newProviderDiningHall,
-            'time': newProviderDiningTime,
+            'startTime': newProviderTime.start,
+            'endTime': newProviderTime.end,
             'contact': newProviderContactInfo,
         };
+        console.log(newProviderJson);
+
+        var sellerTableBody = $('#seller-table table tbody');
+        sellerTableBody.append(`<tr>
+          <th scope="row">${sellerTableBody[0].childElementCount+1}</th>
+          <td>${newProviderJson.name}</td>
+          <td>Thornton</td>
+          <td>${newProviderJson.contact}</td>
+          <td>${newProviderJson.startTime.toLocaleString('en-US', { hour: 'numeric', hour12: true})}-${newProviderJson.endTime.toLocaleString('en-US', { hour: 'numeric', hour12: true})}</td>
+          <td>${newProviderJson.diningHall}</td>
+        </tr>`);
+        
     });
 });
