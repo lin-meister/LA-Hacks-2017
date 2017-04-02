@@ -51,6 +51,31 @@ $(document).ready(function() {
         $('#plus-btn').attr('data-target', '#postDemander');
     })
 
+    $('#postDemander').on('click', '.modal-footer button', function(event) {
+        var newDemanderName = $('#demander-name')[0].value;
+        var newDemanderDiningHall = diningHallMapper($('#demander-dining-hall')[0].value);
+        var newDemanderTime = timeMapper($('#provider-time')[0].value);
+        var newDemanderContactInfo = $('#demander-contact-info')[0].value;
+
+        var newDemanderJson = {
+            'name': newDemanderName,
+            'diningHall': newDemanderDiningHall,
+            'startTime': newDemanderTime.start,
+            'endTime': newDemanderTime.end,
+            'contact': newDemanderContactInfo,
+        };
+        console.log(newDemanderJson);
+
+        var buyerTableBody = $('#buyer-table table tbody');
+        buyerTableBody.append(`<tr>
+          <th scope="row">${buyerTableBody[0].childElementCount+1}</th>
+          <td>${newDemanderJson.name}</td>
+          <td>Thornton</td>
+          <td>${newDemanderJson.startTime.toLocaleString('en-US', { hour: 'numeric', hour12: true})}-${newDemanderJson.endTime.toLocaleString('en-US', { hour: 'numeric', hour12: true})}</td>
+          <td>${newDemanderJson.contact}</td>
+        </tr>`);
+    });
+
     $('#postProvider').on('click', '.modal-footer button', function(event) {
         var newProviderName = $('#provider-name')[0].value;
         var newProviderDiningHall = diningHallMapper($('#provider-dining-hall')[0].value);
@@ -75,6 +100,5 @@ $(document).ready(function() {
           <td>${newProviderJson.startTime.toLocaleString('en-US', { hour: 'numeric', hour12: true})}-${newProviderJson.endTime.toLocaleString('en-US', { hour: 'numeric', hour12: true})}</td>
           <td>${newProviderJson.diningHall}</td>
         </tr>`);
-        
     });
 });
